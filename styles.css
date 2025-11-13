@@ -1,0 +1,91 @@
+body {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(8, 70px);
+  grid-template-rows: repeat(8, 70px);
+  border: 4px solid #222;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.casa {
+  width: 70px;
+  height: 70px;
+  
+  position: relative; 
+}
+
+.casa.clara {
+  background-color: #F0D9B5; 
+}
+
+.casa.escura {
+  background-color: #B58863;
+}
+
+
+.casa.preta::after,
+.casa.branca::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transform: translate(5px, 5px);
+  pointer-events: none; 
+}
+
+.casa.preta::after {
+  background-color: black;
+}
+
+.casa.branca::after {
+  background-color: white;
+  border: 2px solid #999;
+}
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.botao {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  cursor: grab;
+  border: 3px solid #333;
+}
+
+.botao.preta {
+  background-color: black;
+}
+
+.botao.branca {
+  background-color: white;
+  border: 3px solid #aaa;
+}
+
+.botao.remover {
+  background-color: #c0392b;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: grab; /* Mudar para 'grab' para consistência */
+}
