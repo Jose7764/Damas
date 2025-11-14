@@ -2,6 +2,7 @@ const casas = document.querySelectorAll(".casa");
 const pretas = document.querySelector(".botao.preta");
 const brancas = document.querySelector(".botao.branca");
 const remover = document.querySelector(".botao.remover");
+const reiniciar = document.querySelector(".reiniciar");
 
 let tipoAtual = null;
 
@@ -25,7 +26,6 @@ remover.addEventListener("dragstart", () => {
 
 
 casas.forEach(casas => {
-
 
 casas.draggable = true;
 
@@ -73,4 +73,50 @@ casas.addEventListener("drop", (e) => {
     
 
     });
+});
+
+const casaInicialP = document.querySelectorAll(".p");
+const casaInicialB = document.querySelectorAll(".c");
+
+reiniciar.addEventListener("click", () => {
+
+     casas.forEach(casa => {
+    casa.classList.remove("preta", "branca");
+  });
+
+    casaInicialB.forEach(casa => {
+        casa.classList.add("branca");
+    });
+
+    casaInicialP.forEach(casa => {
+        casa.classList.add("preta");
+    });
+
+});
+
+let VP = document.getElementsByClassName("VP")
+let VB = document.getElementsByClassName("VB");
+
+VP.draggable = true;
+VB.draggable = true;
+
+let valorB = 0;
+let valorP = 0;
+    
+localStorage.setItem("Vitorias_Blancas", 0);
+localStorage.setItem("Vitorias_Pretas", 0);
+
+VP.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    localStorage.setItem("Vitorias_Pretas", 1);
+    valorP += 1;
+    VP = valorP;
+});
+
+VB.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    valorB += 1;
+    VB = valorB ;
 });

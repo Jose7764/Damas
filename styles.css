@@ -5,6 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   font-family: sans-serif;
+  flex-direction: column;
 }
 
 .container {
@@ -87,5 +88,37 @@ body {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  cursor: grab; /* Mudar para 'grab' para consistência */
+  cursor: grab; 
 }
+
+.select{
+  background-color: #c0392b;
+}
+
+.reiniciar{
+  width: 105px;
+  height: 105px;
+  background-color: #00ac48;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer; 
+  
+}
+
+.casa.p{
+  position: relative;
+}
+.casa.p{
+  position: relative;
+}
+
+.contadorVitorias{
+  display: flex;
+  font-size: 4rem;
+  width: 140px;
+  justify-content: space-between;
+}
+
